@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = "1.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/filelock_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/filelock/filelock_{{ version }}.tar.gz
-  sha256: ac2915950789b16c43a625a2b8dab6ba423588db4a7d0daa75b74518b82b1403
+  sha256: 2dcd0ec453f5ec4d96f69b0c472569d57d3c5f9956a82a48492ee02f12071137
 
 build:
-  merge_build_host: True  # [win]
-  number: 1004
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -46,8 +46,7 @@ test:
 about:
   home: https://github.com/r-lib/filelock#readme
   license: MIT
-  summary: Place an exclusive or shared lock on a file. It uses 'LockFile' on Windows and 'fcntl'
-    locks on Unix-like systems.
+  summary: Place an exclusive or shared lock on a file. It uses 'LockFile' on Windows and 'fcntl' locks on Unix-like systems.
   license_family: MIT
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
 
